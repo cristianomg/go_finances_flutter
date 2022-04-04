@@ -47,7 +47,7 @@ class RegisterPage extends StatelessWidget {
           const Spacer(),
           Padding(
             padding: const EdgeInsets.only(bottom: 24),
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               height: 60,
               child: ElevatedButton(

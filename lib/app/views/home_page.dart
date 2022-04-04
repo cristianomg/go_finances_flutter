@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
             color: orange),
         IconButton(
             onPressed: () {
-              Navigator.pushNamed(context, '/login');
+              Navigator.pushReplacementNamed(context, '/login');
             },
             icon: const Icon(Icons.logout_outlined),
             color: orange),
@@ -85,12 +85,16 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  _footer() {
+    return const Footer();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(context),
       body: _body(),
-      bottomNavigationBar: const Footer(),
+      bottomNavigationBar: _footer(),
     );
   }
 }
