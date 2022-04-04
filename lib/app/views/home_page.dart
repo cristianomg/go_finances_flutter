@@ -3,11 +3,12 @@ import 'package:go_finances/app/constantes/colors.dart';
 
 import '../componentes/card_header.dart';
 import '../componentes/card_list.dart';
+import '../componentes/footer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
-  _appBar() {
+  _appBar(BuildContext context) {
     return AppBar(
       shadowColor: Colors.transparent,
       backgroundColor: blue,
@@ -37,7 +38,9 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.remove_red_eye_rounded),
             color: orange),
         IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, '/login');
+            },
             icon: const Icon(Icons.logout_outlined),
             color: orange),
       ],
@@ -45,10 +48,9 @@ class HomePage extends StatelessWidget {
   }
 
   _body() {
-    return Container(
+    return SizedBox(
       height: double.infinity,
       width: double.infinity,
-      color: Colors.black.withOpacity(0.1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -83,27 +85,12 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _footer() {
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          label: 'Listagem',
-          icon: const Icon(Icons.list_outlined),
-        ),
-        BottomNavigationBarItem(
-          label: 'Cadastro',
-          icon: const Icon(Icons.money_off_csred_outlined),
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _appBar(),
+      appBar: _appBar(context),
       body: _body(),
-      bottomNavigationBar: _footer(),
+      bottomNavigationBar: const Footer(),
     );
   }
 }
