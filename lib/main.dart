@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_finances/app/constantes/colors.dart';
+import 'package:go_finances/app/views/main_page.dart';
 import 'package:go_finances/app/views/register_page.dart';
 
 import 'app/views/home_page.dart';
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
 
   final routes = <String, WidgetBuilder>{
+    '/main': (BuildContext context) => const MainPage(),
     '/login': (BuildContext context) => const LoginPage(),
     '/home': (BuildContext context) => const HomePage(),
     '/register': (BuildContext context) => const RegisterPage(),

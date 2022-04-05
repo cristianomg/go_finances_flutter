@@ -1,7 +1,6 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:go_finances/app/componentes/footer.dart';
 import 'package:go_finances/app/constantes/colors.dart';
 
 import '../componentes/drow_down.dart';
@@ -72,16 +71,11 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  _footer() {
-    return const Footer();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
       body: _body(),
-      bottomNavigationBar: _footer(),
     );
   }
 }

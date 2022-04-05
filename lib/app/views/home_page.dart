@@ -3,7 +3,6 @@ import 'package:go_finances/app/constantes/colors.dart';
 
 import '../componentes/card_header.dart';
 import '../componentes/card_list.dart';
-import '../componentes/footer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -85,16 +84,11 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  _footer() {
-    return const Footer();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(context),
       body: _body(),
-      bottomNavigationBar: _footer(),
     );
   }
 }
